@@ -8,10 +8,10 @@ module RPS
     end
     def choose
       puts "Rock, Paper, or Scissors?"
-      @sign = gets.chomp.capitalize!
+      @sign = gets.chomp.capitalize
       until @@options.include? @sign
         puts "Please choose Rock, Paper, or Scissors"
-        @sign = gets.chomp.capitalize!
+        @sign = gets.chomp.capitalize
       end
       @sign
     end
