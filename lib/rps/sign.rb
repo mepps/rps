@@ -1,16 +1,15 @@
-module RPSGame
+module RPS
   class Sign
     @@options = ['Rock', 'Paper', 'Scissors']
     def initialize
-      puts @@options
     end
-    def self.options
+    def options
       @@options
     end
     def choose
       puts "Rock, Paper, or Scissors?"
       @sign = gets.chomp.capitalize!
-      while @@options.include? @sign
+      until @@options.include? @sign
         puts "Please choose Rock, Paper, or Scissors"
         @sign = gets.chomp.capitalize!
       end
@@ -26,29 +25,29 @@ module RPSGame
       when "Rock"
         case sign2
         when "Rock"
-          return "tie"
+          "tie"
         when "Paper"
-          return sign2
+          sign2
         when "Scissors"
-          return sign1
+          sign1
         end
       when "Paper"
         case sign2
         when "Rock"
-          return sign1
+          sign1
         when "Paper"
-          return "tie"
+          "tie"
         when "Scissors"
-          return sign2
+          sign2
         end
       when "Scissors"
         case sign2
         when "Rock"
-          return sign2
+          sign2
         when "Paper"
-          return sign1
+          sign1
         when "Scissors"
-          return tie
+          "tie"
         end
       end
     end
